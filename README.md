@@ -51,4 +51,4 @@ python download_models.py
 python main.py
 ```
 
-The program focuses on generating high-quality, consistent face encodings that can be reliably used for facial recognition tasks in other applications. Totally open source and free, no ads, no tracking, no data collection, no data sharing, no data selling.
+The program focuses on generating high-quality, consistent face encodings that can be reliably used for facial recognition tasks in other applications. Totally open source and free, let me know if you have any questions or suggestions.
