@@ -181,20 +181,3 @@ def create_detector() -> Optional[FaceDetector]:
     except Exception as e:
         logging.error(f"Failed to create face detector: {e}")
         return None
-
-if __name__ == "__main__":
-    # Example usage
-    from camera_capture import create_camera
-    
-    detector = create_detector()
-    camera = create_camera()
-    
-    if detector and camera:
-        try:
-            frame = camera.get_frame()
-            if frame is not None:
-                face_locations = detector.detect_faces(frame)
-                annotated_frame = detector.draw_faces(frame, face_locations)
-                print(f"Detected {len(face_locations)} faces")
-        finally:
-            camera.release() 

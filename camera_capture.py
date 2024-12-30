@@ -150,18 +150,3 @@ def create_camera() -> Optional[CameraCapture]:
     except Exception as e:
         logging.error(f"Failed to create camera capture: {e}")
         return None
-
-if __name__ == "__main__":
-    # Example usage
-    logging.basicConfig(level=logging.INFO)
-    camera = create_camera()
-    
-    if camera:
-        try:
-            frame = camera.get_frame()
-            if frame is not None:
-                print(f"Successfully captured frame with shape: {frame.shape}")
-            else:
-                print("Failed to capture frame")
-        finally:
-            camera.release() 

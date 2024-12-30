@@ -186,29 +186,3 @@ def create_recognizer() -> Optional[FaceRecognizer]:
     except Exception as e:
         logging.error(f"Failed to create face recognizer: {e}")
         return None
-
-if __name__ == "__main__":
-    # Example usage
-    from face_detection import create_detector
-    from camera_capture import create_camera
-    
-    recognizer = create_recognizer()
-    detector = create_detector()
-    camera = create_camera()
-    
-    if all((recognizer, detector, camera)):
-        try:
-            frame = camera.get_frame()
-            if frame is not None:
-                # Detect faces
-                face_locations = detector.detect_faces(frame)
-                
-                # Generate encodings
-                encodings = recognizer.encode_faces(frame, face_locations)
-                
-                # Match each face
-                for encoding in encodings:
-                    name, confidence = recognizer.match_face(encoding)
-                    print(f"Detected: {name} (confidence: {1-confidence:.2f})")
-        finally:
-            camera.release() 

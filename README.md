@@ -31,4 +31,24 @@ The face encodings are generated using dlib's deep learning model and can be use
 - Secure local storage of encodings
 - Export options for encoded data
 
+## Setup
+
+1. Install required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Download dlib models:
+
+```bash
+python download_models.py
+```
+
+3. Run the program:
+
+```bash
+python main.py
+```
+
 The program focuses on generating high-quality, consistent face encodings that can be reliably used for facial recognition tasks in other applications. Totally open source and free, no ads, no tracking, no data collection, no data sharing, no data selling.
