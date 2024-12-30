@@ -1,0 +1,59 @@
+# Camera Settings
+camera:
+  device_id: 0
+  width: 1280
+  height: 720
+  fps: 30
+  optimize_pi: false
+  optimize_width: 640
+  optimize_height: 480
+  rotation: 0
+  zoom_factor: 1.0
+  center_offset_x: -500
+  center_offset_y: 0
+
+# Face Detection Settings
+detection:
+  model: "dlib_hog"  # Face detection model: "dlib_hog" (CPU) or "dlib_cnn" (GPU)
+  scale_factor: 0.5  # Increase for better performance
+  max_faces: 1       # Limit to one face during enrollment
+
+# Face Recognition Settings
+recognition:
+  threshold: 0.6     # Face recognition distance threshold (lower = stricter matching)
+  shape_predictor_path: "models/shape_predictor_68_face_landmarks.dat"
+  face_recognition_model_path: "models/dlib_face_recognition_resnet_model_v1.dat"
+  known_faces_path: "data/known_faces.json"  # Path to store known face encodings
+  unknown_faces_dir: "data/unknown_faces/"   # Directory to store unrecognized faces
+
+# Storage and Logging
+storage:
+  base_dir: "data/"  # Base directory for all stored data
+  log_file: "logs/face_recognition.log"  # Path to log file
+  log_level: "INFO"  # Logging level (DEBUG, INFO, WARNING, ERROR)
+  max_log_size: 10   # Maximum log file size in MB
+  backup_count: 3    # Number of backup log files to keep
+
+# Performance Optimization
+performance:
+  process_every_n_frames: 2  # Process every Nth frame (skip frames for better performance)
+  face_detection_upsampling: 1  # Number of times to upsample image (higher = better detection but slower)
+  batch_size: 32     # Batch size for processing multiple faces
+  use_multiprocessing: true  # Enable multiprocessing for parallel face recognition
+
+# Display and UI
+display:
+  show_fps: true     # Show FPS counter on display
+  show_names: true   # Show recognized names above faces
+  box_color: [0, 255, 0]  # RGB color for face detection boxes
+  font_scale: 0.5    # Font scale for displayed text
+  font_thickness: 1  # Thickness of displayed text
+
+# Security and Access Control
+security:
+  save_unknown_faces: true  # Save images of unrecognized faces
+  min_confidence: 0.8      # Minimum confidence score for positive identification
+  max_failed_attempts: 3   # Maximum failed recognition attempts before lockout
+  lockout_duration: 300    # Lockout duration in seconds after max failed attempts 
+
+data_path: "data/face_data.yaml" 
