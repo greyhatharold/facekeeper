@@ -1,4 +1,4 @@
-# Face Encoding Generator
+# Facekeeper - Face Encoding Generator
 
 A simple tool to capture and encode human faces into 128-dimensional numpy arrays for use in facial recognition applications.
 
