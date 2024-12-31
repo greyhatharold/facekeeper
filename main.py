@@ -17,7 +17,7 @@ from face_detection import create_detector
 from face_recognition_module import create_recognizer
 from face_enrollment import FaceEnrollment
 from data_storage import FaceDataStorage
-from gui_app import FaceRecognitionGUI
+from gui import FaceRecognitionGUI
 import tkinter as tk
 
 

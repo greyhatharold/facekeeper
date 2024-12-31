@@ -2,6 +2,10 @@
 /models/
 models/*
 
+# Data directory
+/data/
+data/*
+
 # Log files
 *.log
 logs/
