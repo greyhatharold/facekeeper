@@ -42,7 +42,7 @@ pip install -r requirements.txt
 2. Download dlib models:
 
 ```bash
-python download_models.py
+python setup.download_models.py
 ```
 
 3. Run the program:
